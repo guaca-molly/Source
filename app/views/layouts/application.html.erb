@@ -16,6 +16,13 @@
       <%= flash[:success] %>
     </div>
     <% end %>
+
+    <% if flash[:error].present? %>
+    <div class="error">
+      <%= flash[:error] %>
+    </div>
+    <% end %>
+    
     <header>
       <h1>Source</h1>
       <nav>
