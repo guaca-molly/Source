@@ -24,10 +24,12 @@
     <% end %>
     <div class="container">
     <header>
-      <h1 class="logo"><%= link_to "Source", root_path %></h1>
+      <h1><%= link_to "Source", root_path %></h1>
       <nav>
       <% if is_logged_in? %>
         <strong class="username"><%= @current_user.username %></strong>
+        <%= link_to "All Photos", items_path %>
+        <%= link_to "All Categories", categories_path %>
         <%= link_to "Log out", session_path, method: :delete %>
         <% else %>
           <%= link_to "Sign up", new_user_path %>
