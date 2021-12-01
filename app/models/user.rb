@@ -19,7 +19,7 @@ class User < ApplicationRecord
       # create stripe customer 
       customer = Stripe::Customer.create(
         source: self.stripe_token,
-        description: self.email ,
+        description: self.email 
       )
       # make a subscription on stripe
       subscription = Stripe::Subscription.create(
@@ -35,6 +35,7 @@ class User < ApplicationRecord
       else 
         false
     end 
+
     rescue Stripe::CardError => e
       # this is from stripe
       @message = e.json_body[:error][:message]
