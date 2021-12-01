@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true,  uniqueness: true
   validates :stripe_token, presence: true
+  validates :subscription_plan, inclusion: { in: ["price_1K1VckAKLJKLXKWGEGRdN7i2", "price_1K1VaIAKLJKLXKWGV5BRVSyw"]}
 
   has_secure_password
 
